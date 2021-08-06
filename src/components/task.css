@@ -1,0 +1,169 @@
+.task {
+  display: flex;
+    width: 700px;
+    height: 60px;
+    background-color: #012332;
+   border-radius: 30px;
+   margin-top: 20px;
+   margin-left: 30px; 
+   
+}
+
+
+
+
+.task:hover{
+    background-color: #084A67;
+}
+
+.item{
+    width: 400px;
+    margin-left: 30px;
+    margin-top: 20px;
+    color: white;
+   
+}
+
+
+.total-done {
+    display: flex;
+}
+
+.done{
+    width: 30px;
+    height: 30px;
+    border-radius: 100px;
+    background-color: yellow;
+    margin-left: 130px;
+    margin-top: 14px;
+    padding: 0;
+}
+
+.undo{
+    width: 30px;
+    height: 30px;
+    border-radius: 100px;
+    background-color: rgb(8, 187, 32);
+   margin-left: 220px;
+   margin-top: 14px;
+}
+
+.delete {
+    width: 85px;
+    height: 30px;
+    border-radius: 100px;
+    background-color: red;
+    border:none;
+    color:white;
+    margin-top: 14px;
+    margin-left: 10px;
+    color: white;
+}
+
+.delete:hover{
+    border: white solid 1px;
+}
+
+
+.cl-btn-2 {
+    
+    display: flex;
+    margin-left: 5px;
+
+}
+.cl-btn-2 div {
+    cursor: pointer;
+    position: relative;  
+    height: 12px;
+    width: 12px;
+}
+.cl-btn-2 .leftright {
+    height: 2px;
+    width: 20px;
+    position: absolute;
+    margin-top: 14px;
+    background-color: #012332;
+    border-radius: 2px;
+    transform: rotate(45deg);
+    transition: all .3s ease-in;
+}
+.cl-btn-2 .rightleft {
+    height: 2px;
+    width: 20px;
+    position: absolute;
+    margin-top: 14px;
+    background-color: #012332;
+    border-radius: 2px;
+    transform: rotate(-45deg);
+    transition: all .3s ease-in;
+}
+
+.cl-btn-2 div:hover .leftright {
+    transform: rotate(-45deg);
+    background-color: #4DF9F8;
+}
+.cl-btn-2 div:hover .rightleft {
+    transform: rotate(45deg);
+    background-color: #4DF9F8;
+}
+.cl-btn-2 div:hover .close-btn {
+    opacity: 1;
+}
+
+/* ================================================= */
+
+.cl-btn-1 {
+    
+    display: flex;
+    margin-left: 5px;
+
+}
+.cl-btn-1 div {
+    cursor: pointer;
+    position: relative;  
+    height: 12px;
+    width: 12px;
+}
+.cl-btn-1 .leftright1 {
+    height: 2px;
+    width: 10px;
+    position: absolute;
+    margin-left: 1px;
+    margin-top: 17px;
+    background-color: #012332;
+    border-radius: 2px;
+    transform: rotate(45deg);
+    transition: all .3s ease-in;
+}
+.cl-btn-1 .rightleft1 {
+    height: 2px;
+    width: 16px;
+    position: absolute;
+    margin-left: 4.5px;
+    margin-top: 14px;
+    background-color: #012332;
+    border-radius: 2px;
+    transform: rotate(-60deg);
+    transition: all .3s ease-in;
+}
+
+.cl-btn-1 div:hover .leftright1 {
+    
+    background-color: #4DF9F8;
+}
+.cl-btn-1 div:hover .rightleft1 {
+    
+    background-color: #4DF9F8;
+}
+.cl-btn-1 div:hover .close-btn {
+    opacity: 1;
+}
+
+.item-done{
+    width: 400px;
+    margin-left: 30px;
+    margin-top: 20px;
+    color: white;
+    text-decoration: line-through;
+}
+
