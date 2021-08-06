@@ -62,7 +62,8 @@ class Main extends React.Component {
         return <>
         <div className = "form">
             <div className = "back">
-             <h1 className = "title">Active tasks: {active.length}</h1>
+             <h1 className = "title">Active tasks: {active.length} </h1>
+             <h1 className = "title2"> Done tasks: {done.length}</h1>
              </div>
              {[...active, ...done].map(task => (<Task 
              doneTask={()=> this.doneTask(task.id)}
