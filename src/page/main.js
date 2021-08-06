@@ -9,26 +9,28 @@ class Main extends React.Component {
       super(props)
       this.state = {
            tasks: [{id:0, title: 'Create to do list', done: false },
-                 {id:1, title: 'Buy something', done: true},
-                 {id:2, title: 'Read book', done: false },
-        ]
-           
+                   {id:1, title: 'Buy something', done: true},
+                   {id:2, title: 'Read book', done: false },
+                  ]        
       };
     }
 
     doneTask = id => {
         const index = this.state.tasks.map(task => task.id).indexOf(id)
-        this.setState( state =>{let {tasks} = state ;
-        tasks[index].done = true;
-        return tasks})
+        this.setState( state =>{
+        let {tasks} = state ;
+        return tasks[index].done = true;
+        
+    })
     }
 
     deleteTask = id => {
         const index = this.state.tasks.map(task => task.id).indexOf(id)
+        console.log(index)
         this.setState( state => {
             let {tasks} = state;
-            tasks.splice([index],1)   //<--- если использовать delete, то удаляет по одной задаче, а splice по две
-            return tasks
+            return {tasks : tasks.filter((task,i,ar) => task !== ar[index])}  
+            
         })
     }
 
@@ -43,13 +45,12 @@ class Main extends React.Component {
       this.setState(state => {
            let {tasks} = state;
         
-        tasks.push ({
+       return{ tasks:[ ...tasks, {
             id: tasks.length !== 0 ? tasks.length : 0,
             title: task,
             done: false,
-        })
-       
-           return tasks
+        }]
+    }
         })
     }
 
@@ -63,7 +64,7 @@ class Main extends React.Component {
             <div className = "back">
              <h1 className = "title">Active tasks: {active.length}</h1>
              </div>
-             {tasks.map(task => (<Task 
+             {[...active, ...done].map(task => (<Task 
              doneTask={()=> this.doneTask(task.id)}
              deleteTask={()=> this.deleteTask(task.id)}
              undoTask={()=> this.undoTask(task.id)}
